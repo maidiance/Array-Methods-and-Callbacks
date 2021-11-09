@@ -77,7 +77,7 @@ function getWinners(array, getFinalsCb) {
     });
     return winners;
 }
-// console.log(getWinners(fifaData, getFinals));
+console.log(getWinners(fifaData, getFinals));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -157,15 +157,15 @@ Write a function called getGoals() that accepts a parameter `data` and returns t
 
 function getGoals(data) {
 
-    data.forEach(function(item){
-        // Sum goals
-        // let goals = data.reduce(function(acc, item){
-        //     // return acc + item['']
-        // }, 0);
-        // Check avg 
+    // data.forEach(function(item){
+    //     // Sum goals
+    //     // let goals = data.reduce(function(acc, item){
+    //     //     // return acc + item['']
+    //     // }, 0);
+    //     // Check avg 
 
-        // Return team with mostGoals
-    });
+    //     // Return team with mostGoals
+    // });
 }
 
 
