@@ -38,7 +38,7 @@ function getFinals(data) {
    });
    return finals;
 }
-console.log(getFinals(fifaData));
+// console.log(getFinals(fifaData));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -67,7 +67,8 @@ Use the higher-order function getWinners to do the following:
 
 function getWinners(array, getFinalsCb) {
     // Check if home team goals > away team goals
-    const winners = array.map(function(item){
+    const finals = getFinalsCb(array);
+    const winners = finals.map(function(item){
         if(item['Home Team Goals'] > item['Away Team Goals']){
             return item['Home Team Name'];
         } else {
