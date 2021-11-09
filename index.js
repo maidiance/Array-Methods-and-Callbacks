@@ -93,8 +93,8 @@ function getWinnersByYear(array, getFinalsCb, getYearsCb, getWinnersCb) {
     // map over one array and grab each item use index of other array
     const winners = getWinnersCb(array, getFinalsCb);
     const years = getYearsCb(array, getFinalsCb);
-    const winnersByYear = winners.map(function(item, index, years){
-        return `In ${years[index]}, ${item[index]} won the world cup!`;
+    const winnersByYear = winners.map(function(item, index){
+        return `In ${years[index]}, ${winners[index]} won the world cup!`;
     });
     return winnersByYear;
 }
