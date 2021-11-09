@@ -31,10 +31,14 @@ Use getFinals to do the following:
 hint - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(/* code here */) {
-   /* code here */
+function getFinals(data) {
+   // filter with Stage === 'Final'
+   const finals = data.filter(function(item){
+        return item.Stage === 'Final';
+   });
+   return finals;
 }
-
+console.log(getFinals(fifaData));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -45,6 +49,7 @@ Use the higher-order function called getYears to do the following:
 
 function getYears(/* code here */) {
     /* code here */
+    // map
 }
 
 
@@ -58,6 +63,7 @@ Use the higher-order function getWinners to do the following:
 
 function getWinners(/* code here */) {
     /* code here */
+    // Check if home team goals > away team goals
 }
 
 
@@ -75,6 +81,7 @@ hint: the strings returned need to exactly match the string in step 4.
 
 function getWinnersByYear(/* code here */) {
     /* code here */
+    // map over one array and grab each item use index of other array
 }
 
 
@@ -91,6 +98,9 @@ Use the higher order function getAverageGoals to do the following:
 
 function getAverageGoals(/* code here */) {
    /* code here */
+   // add up all goals with .reduce
+   // then divide by the length of array
+   // round to two decimal places (with toFixed())
 }
 
 
