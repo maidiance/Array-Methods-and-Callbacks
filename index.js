@@ -38,7 +38,7 @@ function getFinals(data) {
    });
    return finals;
 }
-// console.log(getFinals(fifaData));
+console.log(getFinals(fifaData));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -49,7 +49,8 @@ Use the higher-order function called getYears to do the following:
 
 function getYears(array, getFinalsCb) {
     // map
-    const years = array.map(function(item){
+    const finals = getFinalsCb(array);
+    const years = finals.map(function(item){
         return item.Year;
     });
     return years;
@@ -98,7 +99,7 @@ function getWinnersByYear(array, getFinalsCb, getYearsCb, getWinnersCb) {
     });
     return winnersByYear;
 }
-// console.log(getWinnersByYear(fifaData, getFinals, getYears, getWinners));
+console.log(getWinnersByYear(fifaData, getFinals, getYears, getWinners));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -153,17 +154,24 @@ function getCountryWins(data, teamInitials) {
 /* 💪💪💪💪💪 Stretch 2: 💪💪💪💪💪 
 Write a function called getGoals() that accepts a parameter `data` and returns the team with the most goals score per appearance (average goals for) in the World Cup finals */
 
-function getGoals(/* code here */) {
+function getGoals(data) {
 
-    /* code here */
+    data.forEach(function(item){
+        // Sum goals
+        // let goals = data.reduce(function(acc, item){
+        //     // return acc + item['']
+        // }, 0);
+        // Check avg 
 
+        // Return team with mostGoals
+    });
 }
 
 
 /* 💪💪💪💪💪 Stretch 3: 💪💪💪💪💪
 Write a function called badDefense() that accepts a parameter `data` and calculates the team with the most goals scored against them per appearance (average goals against) in the World Cup finals */
 
-function badDefense(/* code here */) {
+function badDefense(data) {
 
     /* code here */
 
