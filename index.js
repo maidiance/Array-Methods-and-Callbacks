@@ -137,18 +137,26 @@ Hint: use `.reduce` */
 
 function getCountryWins(data, teamInitials) {
     /* code here */
-    // filter to just plays with the teamInitials
-    const teamPlays = data.filter(function(item){
-        return item['Home Team Initials'] === teamInitials || item['Away Team Initials'] === teamInitials;
-    });
     // filter to ones that made it to the Finals
-    const worldCup = teamPlays.filter(item => item.Stage === 'Final');
-    // count wins
-
-    //return wins;
+    const worldCup = data.filter(item => item.Stage === 'Final');
+    const filteredData = worldCup.filter(item => item["Home Team Initials"] === teamInitials|| item["Away Team Initials"] === teamInitials);
+    const cupWins = filteredData.reduce(function(acc, item){
+        if(item["Home Team Initials"] === teamInitials){
+            // count home wins
+            if (item["Home Team Goals"] > item["Away Team Goals"]){
+                acc++;
+            }
+            // count away wins
+        } else if(item["Away Team Initials"] === teamInitials){
+            if (item["Away Team Goals"] > item["Home Team Goals"]){
+                acc++;
+            }
+        }
+        return acc;
+    }, 0);
+    return cupWins;
 }
-//getCountryWins(fifaData, 'FRA');
-// console.log(getCountryWins(fifaData, "FRA"));
+//console.log('stretch goal 1:', getCountryWins(fifaData, "FRA"));
 
 
 /* 💪💪💪💪💪 Stretch 2: 💪💪💪💪💪 
