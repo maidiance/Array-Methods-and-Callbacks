@@ -144,13 +144,7 @@ function getCountryWins(data, teamInitials) {
     // filter to ones that made it to the Finals
     const worldCup = teamPlays.filter(item => item.Stage === 'Final');
     // count wins
-    const goals = worldCup.reduce(function(acc, item){
-        if(item['Home Team Initials'] === teamInitials){
-            return acc + item["Home Team Goals"];
-        } else {
-            return acc + item["Away Team Goals"];
-        }
-    }, 0);
+
     //return wins;
 }
 //getCountryWins(fifaData, 'FRA');
@@ -163,9 +157,9 @@ Write a function called getGoals() that accepts a parameter `data` and returns t
 function getGoals(data) {
     // make an array of goals
     const teamGoals = {};
-    // initialize the results array
+    // initialize the array
     data.map(item => teamGoals[item['Home Team Name']] = 0);
-    // with map, add up goals
+    // with map add up goals
     data.map(function(item){
         teamGoals[item['Home Team Name']] = teamGoals[item["Home Team Name"]] + item["Home Team Goals"];
     });
@@ -186,9 +180,8 @@ function getGoals(data) {
     const highestAvg = avgGoals.reduce(function(prev, current){
         return (prev.AvgGoals > current.AvgGoals) ? prev : current;
     }, 0);
-    console.log(highestAvg);
+    return highestAvg.Name;
 }
-getGoals(fifaData);
 //console.log(getGoals(fifaData));
 
 /* 💪💪💪💪💪 Stretch 3: 💪💪💪💪💪
